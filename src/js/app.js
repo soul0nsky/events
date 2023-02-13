@@ -1,23 +1,14 @@
-import gobImg from '../img/goblin.png';
+import './renderField.js';
+import endGame from './endGame.js';
+import goblinImg from '../img/goblin.png';
+import GameLogic from '../components/gameLogic/GameLogic.js';
 
-function onLoad() {
-  const field = document.querySelector('.field');
+const gameLogic = new GameLogic('.main-container');
 
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
-      const divElem = document.createElement('div');
-      divElem.classList.add('elem');
-      divElem.dataset.id = (4 * i) + j + 1;
-      field.appendChild(divElem);
-    }
-  }
-}
-document.addEventListener('DOMContentLoaded', onLoad);
-
-function addImg(targetsArr, curr) {
+function addImgTarget(targetsArr, curr) {
   const img = document.createElement('img');
   img.classList.add('img-target');
-  img.src = gobImg; // ../src/img/goblin.png ./img/goblin.png goblin.png
+  img.src = goblinImg;
   targetsArr[curr].appendChild(img);
 }
 
@@ -26,18 +17,6 @@ function removeTarget() {
   if (target) {
     target.remove();
   }
-}
-
-function endGame() {
-  const timer = document.getElementById('timer');
-  timer.textContent = 5;
-
-  setInterval(() => {
-    timer.textContent--;
-    if (Number(timer.textContent) === 0) {
-      location.reload();
-    }
-  }, 1000);
 }
 
 function addTarget() {
@@ -57,7 +36,7 @@ function addTarget() {
       curr += 1;
     }
 
-    addImg(targets, curr);
+    addImgTarget(targets, curr);
 
     prevTargetId = Number(targets[curr].dataset.id);
   }, 1000);
