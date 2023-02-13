@@ -16,6 +16,7 @@
 
     "rules": {
         "default-param-last": 1,
+       "no-unused-vars": 1,
         "no-restricted-syntax": [
             "error",
             "LabeledStatement",

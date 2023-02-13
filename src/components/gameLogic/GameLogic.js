@@ -1,3 +1,5 @@
+import hummerImg from '../../img/hammer2.png';
+
 export default class GameLogic {
   constructor(element) {
     this.onClickItem = this.onClickItem.bind(this);
@@ -13,7 +15,12 @@ export default class GameLogic {
     const boxTarget = e.target.classList.contains('elem');
 
     if (imgTarget) {
+      e.target.style.cursor = `url(${hummerImg}), auto`;
       this.points.textContent = Number(this.points.textContent) + 1;
+
+      setTimeout(() => {
+        e.target.style.cursor = 'default';
+      }, 250);
     }
 
     if (boxTarget) {
