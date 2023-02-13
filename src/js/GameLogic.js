@@ -1,4 +1,4 @@
-import hummerImg from '../../img/hammer2.png';
+import hummerImg from '../img/hammer2.png';
 
 export default class GameLogic {
   constructor(element) {
