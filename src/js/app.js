@@ -1,5 +1,5 @@
-import GameStructure from '../components/GameStructure/GameStructure.js';
-import GameLogic from '../components/GameLogic/GameLogic.js';
+import GameStructure from '../components/GameStructure/GameStructure';
+import GameLogic from '../components/GameLogic/GameLogic';
 
 const gameStructure = new GameStructure('.main-container');
 const gameLogic = new GameLogic('.main-container');

@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import goblinImg from '../../img/goblin.png';
 
 export default class GameStructure {
