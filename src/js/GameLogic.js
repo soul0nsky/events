@@ -1,4 +1,7 @@
 import hummerImg from '../img/hammer2.png';
+import bangImg from '../img/flash-bang.png';
+import audioKick from '../audio/udar.mp3';
+import missKick from '../audio/haha.mp3';
 
 export default class GameLogic {
   constructor(element) {
@@ -18,19 +21,29 @@ export default class GameLogic {
     if (imgTarget) {
       e.target.style.cursor = `url(${hummerImg}), auto`;
       this.points.textContent = Number(this.points.textContent) + 1;
+      e.target.src = `${bangImg}`;
+
+      const audio = new Audio(audioKick);
+      audio.play();
 
       setTimeout(() => {
         e.target.style.cursor = 'default';
+        e.target.remove();
       }, 250);
     }
 
     if (boxTarget) {
+      const audio = new Audio(missKick);
+
       if (Number(this.misses.textContent) >= 4) {
         this.misses.textContent = 0;
         this.points.textContent = 0;
+        audio.play();
+
         alert('Конец игры');
       } else {
         this.misses.textContent = Number(this.misses.textContent) + 1;
+        audio.play();
       }
 
       e.target.style.backgroundColor = 'rgb(253, 137, 183)';
