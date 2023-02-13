@@ -4,6 +4,9 @@
 
 ![](./pic/GracefulMiniatureBustard-small.gif)
 
+[![Build status](https://ci.appveyor.com/api/projects/status/fxvr8ih6vjkax51b?svg=true)](https://ci.appveyor.com/project/soul0nsky/events)
+[![DOM](https://github.com/soul0nsky/events/actions/workflows/main.yml/badge.svg)](https://github.com/soul0nsky/events/actions/workflows/main.yml)
+
 #### Легенда
 
 Вы решили доделать игру с гоблинами, поэтому нужно реализовать оставшуюся логику.

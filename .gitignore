@@ -131,4 +131,5 @@ dist
 
 dist 
 .DS_Store
-draft.js
+draft
+app2Old.js

@@ -6,6 +6,7 @@ export default class GameLogic {
 
     this.element = document.querySelector(element);
     this.points = this.element.querySelector('#points');
+    this.misses = this.element.querySelector('#misses');
 
     this.element.addEventListener('click', this.onClickItem);
   }
@@ -24,8 +25,15 @@ export default class GameLogic {
     }
 
     if (boxTarget) {
-      e.target.style.backgroundColor = 'rgb(253, 137, 183)';
+      if (Number(this.misses.textContent) >= 4) {
+        this.misses.textContent = 0;
+        this.points.textContent = 0;
+        alert('Конец игры');
+      } else {
+        this.misses.textContent = Number(this.misses.textContent) + 1;
+      }
 
+      e.target.style.backgroundColor = 'rgb(253, 137, 183)';
       setTimeout(() => {
         e.target.style.backgroundColor = 'rgb(146, 239, 255)';
       }, 300);
