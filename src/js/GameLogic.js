@@ -36,11 +36,14 @@ export default class GameLogic {
       const audio = new Audio(missKick);
 
       if (Number(this.misses.textContent) >= 4) {
-        this.misses.textContent = 0;
-        this.points.textContent = 0;
-        audio.play();
+        this.misses.textContent = Number(this.misses.textContent) + 1;
 
-        alert('Конец игры');
+        audio.play();
+        setTimeout(() => {
+          this.misses.textContent = 0;
+          this.points.textContent = 0;
+          alert('Конец игры');
+        }, 100);
       } else {
         this.misses.textContent = Number(this.misses.textContent) + 1;
         audio.play();
